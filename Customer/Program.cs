@@ -1,4 +1,4 @@
-using Customer.Data;
+
 using Customer.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,10 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IDatabaseHandler, DatabaseHandler>();
-builder.Services.AddSingleton<IDatabaseHandler, DatabaseHandler>();
-builder.Services.AddTransient<IDatabaseHandler, DatabaseHandler>();
-builder.Services.AddScoped<ICustomer, CustomerService>();
+builder.Services.AddSingleton<ICustomer, CustomerService>();
 
 var app = builder.Build();
 

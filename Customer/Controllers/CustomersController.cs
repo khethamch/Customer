@@ -9,6 +9,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Diagnostics;
 using System.Reflection.PortableExecutable;
 using System;
+using Microsoft.AspNetCore.Cors;
 
 namespace Customer.Controllers
 {
@@ -25,6 +26,7 @@ namespace Customer.Controllers
             _customer2 = customer2;
         }
 
+        [EnableCors()]
         [HttpGet]
         [Route("get-customers")]
         public IActionResult GetCustomers()
